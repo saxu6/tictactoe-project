@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --background: #1a1a1a;
+  --text: #ffffff;
+  --primary: #4a9eff;
+  --primary-hover: #357abd;
+  --secondary: #2a2a2a;
+  --accent: #ff6b6b;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  background: var(--secondary);
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.menu-btn:hover {
+  background: var(--primary);
+}
+
+.sidebar {
+  position: fixed;
+  left: -280px;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  background-color: var(--secondary);
+  transition: left 0.3s ease-in-out;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: var(--accent);
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.sidebar select,
+.sidebar .new-game-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.sidebar select:focus,
+.sidebar .new-game-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.player-info {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.game-board {
+  background: var(--secondary);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: var(--background);
+  border: 2px solid var(--primary);
+  margin: 4px;
+  border-radius: 12px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.square:hover:not(:disabled) {
+  background-color: rgba(74, 158, 255, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(74, 158, 255, 0.5);
+}
+
+.game-info {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.draws {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.new-game-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  background-color: var(--primary);
+  color: var(--text);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.new-game-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(74, 158, 255, 0.3);
+}
+
+@media (max-width: 600px) {
+  .square {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .game-info,
+  .draws {
+    font-size: 1.1rem;
+  }
+}
+
