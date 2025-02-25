@@ -5,7 +5,7 @@ A simple Tic-Tac-Toe game built with **React (Frontend)** and **FastAPI (Backend
 - **Player vs Easy AI**
 - **Player vs Hard AI**
 
-## 🚀 Features
+## Features
 - Play against a friend or AI.
 - Keeps track of scores.
 - Minimalistic and responsive UI.
