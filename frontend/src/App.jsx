@@ -90,30 +90,32 @@ const App = () => {
         setIsOpen={setSidebarOpen}
       />
       <div className="game-container">
-        <div className="player-info">
-          <h2>Player X</h2>
-          <p>Score: {scores.X}</p>
-        </div>
-        <div className="game-board">
-          <h1>Tic Tac Toe</h1>
-          <div className="board-row">{[0, 1, 2].map(renderSquare)}</div>
-          <div className="board-row">{[3, 4, 5].map(renderSquare)}</div>
-          <div className="board-row">{[6, 7, 8].map(renderSquare)}</div>
-          <div className="game-info">
-            {gameState.gameOver ? (
-              <div>{gameState.winner ? `Winner: ${gameState.winner}` : "It's a draw!"}</div>
-            ) : (
-              <div>Next player: {gameState.board.filter(square => square === ' ').length % 2 === 0 ? 'O' : 'X'}</div>
-            )}
+        <div className="game-wrapper">
+          <div className="player-info">
+            <h2>Player X</h2>
+            <p>Score: {scores.X}</p>
+          </div>
+          <div className="game-board">
+            <h1>Tic Tac Toe</h1>
+            <div className="board-row">{[0, 1, 2].map(renderSquare)}</div>
+            <div className="board-row">{[3, 4, 5].map(renderSquare)}</div>
+            <div className="board-row">{[6, 7, 8].map(renderSquare)}</div>
+            <div className="game-info">
+              {gameState.gameOver ? (
+                  <div>{gameState.winner ? `Winner: ${gameState.winner}` : "It's a draw!"}</div>
+              ) : (
+                  <div>Next player: {gameState.board.filter(square => square === ' ').length % 2 === 0 ? 'O' : 'X'}</div>
+              )}
+            </div>
+          </div>
+          <div className="draws">
+            <p>Draws: {scores.Draws}</p>
+          </div>
+          <div className="player-info">
+            <h2>Player O</h2>
+            <p>Score: {scores.O}</p>
           </div>
         </div>
-        <div className="player-info">
-          <h2>Player O</h2>
-          <p>Score: {scores.O}</p>
-        </div>
-      </div>
-      <div className="draws">
-        <p>Draws: {scores.Draws}</p>
       </div>
     </div>
   );
